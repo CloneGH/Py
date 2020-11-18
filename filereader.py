@@ -4,19 +4,16 @@
 # In[40]:
 
 
-import os
-files = os.listdir()
-print(files)
-pointfile = open("pointlist.txt", "w")
-for i in files:
-    if i.lower().endswith(".txt"):
-        file = open(i, "r")
+txtfile = input("type in the file name you want to copy parts of: ")
+newfile = input("type in a new file name: ")
+txtwrite = open(newfile, "w")
+file = open(txtfile, "r")
 for text in file:
-    if "Points" in text or "POINTS" in text or "points" in text:
+    if "word" in text:
         print(text)
-        pointfile.write(text)
+        txtwrite.write(text)
 file.close()
-pointfile.close()
+txtwrite.close()
 
 
 # In[ ]:
